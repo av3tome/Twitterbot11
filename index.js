@@ -99,7 +99,7 @@ app.get("/moppy", (req, res) => {
 });
 
 const mercari = async () => {
-    var text = "メルカリを使ってみてね！¥n500円分お得にお買い物できる招待コード【" + process.env.MERCARI_CODE + "】を贈りました🎁¥nアプリをインストールして登録してね"
+    var text = "メルカリを使ってみてね！\n500円分お得にお買い物できる招待コード【" + process.env.MERCARI_CODE + "】を贈りました🎁\nアプリをインストールして登録してね"
     var random = emojis[Math.floor(Math.random() * emojis.length)];
     var hashTag = "#メルカリ #Mercari #お小遣い稼ぎ #節約 #副業"
     console.log(random)
@@ -119,7 +119,7 @@ app.get("/mercari", (req, res) => {
 });
 
 const daiwa = async () => {
-    var text = "スマホではじめるワンコイン投資🎉ポイント投資もできる #大和コネクト証券 で #NISA をはじめませんか？¥n口座開設で4100円が貰える「招待コード」を贈ります🎁¥n申込時に招待コード【" 
+    var text = "スマホではじめるワンコイン投資🎉ポイント投資もできる #大和コネクト証券 で #NISA をはじめませんか？\n口座開設で4100円が貰える「招待コード」を贈ります🎁\n申込時に招待コード【" 
         + process.env.DAIWA_CODE + "】を入力して受け取ろう"
     var random = emojis[Math.floor(Math.random() * emojis.length)];
     console.log(random)
@@ -139,12 +139,12 @@ app.get("/daiwa", (req, res) => {
 });
 
 const olive = async () => {
-    var text = "紹介してもされても1,000ポイント！¥nOliveアカウント紹介プログラム！！¥n紹介コード【" 
-        + process.env.OLIVE_CODE + "】¥nエントリー＆申込はこちら"
+    var text = "紹介してもされても1,000ポイント！\nOliveアカウント紹介プログラム！！\n紹介コード【" 
+        + process.env.OLIVE_CODE + "】\nエントリー＆申込はこちら"
     var random = emojis[Math.floor(Math.random() * emojis.length)];
     console.log(random)
     var hashTag = "#Oliveアカウント紹介プログラム #三井住友銀行"
-    var tweet = text + random + " " + process.env.OLIVE_URI + " " + hashTag;
+    var tweet = text + random + " " + process.env.OLIVE_URI + "\n" + hashTag;
     console.log(tweet)
     client.v2.tweet(tweet);
 };
